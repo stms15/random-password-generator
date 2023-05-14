@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -28,7 +28,23 @@
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
+      <div class="card" style="margin-top:10px;">
+        <form>
+          <h5>Password Length:</h5>
+          <ul>
+            <li><label for="length"></label><input type="range" min="8" max="128" step="1" id="length"></li>
+          </ul>
+          <h5>Characters to Include:</h5>
+          <ul>
+            <li><input type="checkbox" id="include-upper"><label for="include-upper">Uppercase letters (A, B, etc.)</label></li>
+            <li><input type="checkbox" id="include-lower"><label for="include-lower">Lowercase letters (a, b, etc.)</label></li>
+            <li><input type="checkbox" id="include-numbers"><label for="include-numbers">Numbers (1, 2, etc.)</label></li>
+            <li><input type="checkbox" id="include-special"><label for="include-special">Special characters (&, $, etc.)</label></li>
+          </ul>
+          <input type="button" value="Generate" id="criteria-bttn">
+        </form>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
