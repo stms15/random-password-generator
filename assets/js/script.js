@@ -20,7 +20,11 @@ function validateCriteria(len, types) {
 // Generate a random password based on the criteria
 function generatePassword() {
   var passwordLen = prompt("Please enter the number of characters to use between 8 and 128");
-  var characterTypes = prompt("Please enter the NUMBER(S) associated with the types of characters to use, separated by a comma.\n\n" + "1. Lower case (a, b...)\n" + "2. Upper case (A, B...)\n" + "3. Numbers (1, 2...)\n" + "4. Special characters (@, $...)");
+  // var characterTypes = prompt("Please enter the NUMBER(S) associated with the types of characters to use, separated by a comma.\n\n" + "1. Lower case (a, b...)\n" + "2. Upper case (A, B...)\n" + "3. Numbers (1, 2...)\n" + "4. Special characters (@, $...)");
+  var includeLower = prompt("Do you want to inlcude lower case characters? (Ex: a, b...)\n" + "Enter: true/false");
+  var includeUpper = prompt("Do you want to inlcude lower case characters? (Ex: A, B...)\n" + "Enter: true/false");
+  var includeNums = prompt("Do you want to inlcude lower case characters? (Ex: 1, 2...)\n" + "Enter: true/false");
+  var includeSpecial = prompt("Do you want to inlcude lower case characters? (Ex: @, #...)\n" + "Enter: true/false");
 
   var valid = validateCriteria(passwordLen, characterTypes);
   console.log(valid);
