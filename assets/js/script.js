@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 // Validate the criteria data
 function validateCriteria(len, types) {
   var checkTypes = function(type) {
-    if (type === "false" || type === "" || type === "no"){
+    if (type === "no" || type === ""){
       return true;
     } else {
       return false;
@@ -17,8 +17,8 @@ function validateCriteria(len, types) {
   } else if (types.every(checkTypes)) {
     alert("At least one set of characters has to be selected. Please try again.")
     return false;
-  } else if (!types.includes("true")){
-    alert('Invalid input for character selection. Please type "true" or "false" for each choice.');
+  } else if (!types.includes("yes")){
+    alert('Invalid input for character selection. Please type "yes" or "no" for each choice.');
     return false;
   } else {
     return true;
@@ -34,25 +34,25 @@ function generatePassword() {
   var specialChars = "!@#$%^&*()-_+=?/{}";
 
   var passwordLen = prompt("Please enter the number of characters to use between 8 and 128");
-  var includeLower = prompt("Do you want to inlcude lower case characters? (Ex: a, b...)\n" + "Enter: true/false");
-  var includeUpper = prompt("Do you want to inlcude lower case characters? (Ex: A, B...)\n" + "Enter: true/false");
-  var includeNums = prompt("Do you want to inlcude lower case characters? (Ex: 1, 2...)\n" + "Enter: true/false");
-  var includeSpecial = prompt("Do you want to inlcude lower case characters? (Ex: @, #...)\n" + "Enter: true/false");
+  var includeLower = (prompt("Do you want to inlcude lower case characters? (Ex: a, b...)\n" + "Enter: true/false")).toLowerCase();
+  var includeUpper = (prompt("Do you want to inlcude lower case characters? (Ex: A, B...)\n" + "Enter: true/false")).toLowerCase();
+  var includeNums = (prompt("Do you want to inlcude lower case characters? (Ex: 1, 2...)\n" + "Enter: true/false")).toLowerCase();
+  var includeSpecial = (prompt("Do you want to inlcude lower case characters? (Ex: @, #...)\n" + "Enter: true/false")).toLowerCase();
 
   var characterTypes = [includeLower, includeUpper, includeNums, includeSpecial];
   var valid = validateCriteria(passwordLen, characterTypes);
   
   var selection = "";
-  if (characterTypes[0] == "true") {
+  if (characterTypes[0] == "yes") {
     selection = selection + lowerChars;
   }
-  if (characterTypes[1] == "true") {
+  if (characterTypes[1] == "yes") {
     selection = selection + upperChars;
   }
-  if (characterTypes[2] == "true") {
+  if (characterTypes[2] == "yes") {
     selection = selection + numbers;
   }
-  if (characterTypes[3] == "true") {
+  if (characterTypes[3] == "yes") {
     selection = selection + specialChars;
   }
 
