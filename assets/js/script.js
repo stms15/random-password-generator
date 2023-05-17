@@ -34,10 +34,10 @@ function generatePassword() {
   var specialChars = "!@#$%^&*()-_+=?/{}";
 
   var passwordLen = prompt("Please enter the number of characters to use between 8 and 128");
-  var includeLower = (prompt("Do you want to inlcude lower case characters? (Ex: a, b...)\n" + "Enter: true/false")).toLowerCase();
-  var includeUpper = (prompt("Do you want to inlcude lower case characters? (Ex: A, B...)\n" + "Enter: true/false")).toLowerCase();
-  var includeNums = (prompt("Do you want to inlcude lower case characters? (Ex: 1, 2...)\n" + "Enter: true/false")).toLowerCase();
-  var includeSpecial = (prompt("Do you want to inlcude lower case characters? (Ex: @, #...)\n" + "Enter: true/false")).toLowerCase();
+  var includeLower = (prompt("Do you want to inlcude lower case characters? (Ex: a, b...)\n" + "Enter: yes/no")).toLowerCase();
+  var includeUpper = (prompt("Do you want to inlcude upper case characters? (Ex: A, B...)\n" + "Enter: yes/no")).toLowerCase();
+  var includeNums = (prompt("Do you want to inlcude numbers? (Ex: 1, 2...)\n" + "Enter: yes/no")).toLowerCase();
+  var includeSpecial = (prompt("Do you want to inlcude special characters? (Ex: @, #...)\n" + "Enter: yes/no")).toLowerCase();
 
   var characterTypes = [includeLower, includeUpper, includeNums, includeSpecial];
   var valid = validateCriteria(passwordLen, characterTypes);
